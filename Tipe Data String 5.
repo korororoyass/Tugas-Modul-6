@@ -1,0 +1,125 @@
+#include <stdio.h>		//file header untuk fungsi dasar termasuk input dan outout
+#include <string.h>		//file header untuk memanggil fungsi yang digunakan untuk manipulasi string
+#include <conio.h>
+
+int main(){
+	char nama[60];
+	char insert;
+	int indeks, menuP;
+	
+	printf("Menu Program: (Masukkan angka untuk melanjutkan)\n");
+	printf("1. Insert karakter pada indeks x \n2. Insert array pada indeks x \n");
+	printf("3. Pencarian substring/teks \n4. Menggabungkan 2 buah string/teks \n");
+	printf("Masukkan inputan: ");
+	scanf("%i", &menuP);
+	printf("--------------------------------------------------\n");
+	
+	switch(menuP){
+		case 1:{
+			printf("Masukkan nama: ");
+			getchar();
+			gets(nama);
+			printf("--------------------------------------------------\n");
+			printf("Nama yang anda masukkan: %s\n", nama);
+			printf("--------------------------------------------------\n");
+			
+			printf("Indeks ke berapa dari nama anda yang ingin anda ubah? (dihitung mulai dari 0)\n");
+			printf("Masukkan inputan: ");
+			scanf("%i", &indeks);
+			
+			printf("Masukkan karakter: ");
+			getchar();
+			insert = getche();
+			printf("\n--------------------------------------------------\n");
+			
+			printf("Indeks[%i] dari nama anda: %c\n", indeks, nama[indeks]);
+			nama[indeks] = insert;
+			printf("--------------------------------------------------\n");
+			
+			printf("Indeks[%i] setelah diubah: %c\n", indeks, nama[indeks]);
+			printf("--------------------------------------------------\n");
+			
+			printf("Nama setelah diubah: %s\n", nama);
+			break;
+		}
+		case 2:{
+			int p;
+			
+			printf("Masukkan panjang array: ");
+			scanf("%i", &p);
+			printf("--------------------------------------------------\n");
+			
+			int gudangka[p];
+			
+			for(int i=0; i<p; i++){
+				printf("Masukkan nilai indeks[%i] = ", i);
+				scanf("%i", &gudangka[i]);
+			}
+			
+			printf("--------------------------------------------------\n");
+			printf("| Isi array awal |\n");
+			printf("------------------");
+			
+			for(int i=0; i<p; i++){
+				printf("\nNilai indeks[%i] = %i", i, gudangka[i]);
+			}
+			
+			printf("\n--------------------------------------------------\n");
+			printf("Masukkan indeks ke berapa yang ingin diubah: ");
+			scanf("%i", &indeks);
+			
+			printf("Masukkan nilai angka: ");
+			scanf("%i", &gudangka[indeks]);
+			printf("--------------------------------------------------\n");
+			
+			printf("| Isi array setelah diubah |\n");
+			printf("----------------------------");
+			
+			for(int i=0; i<p; i++){
+				printf("\nNilai indeks[%i] = %i", i, gudangka[i]);
+			}
+			break;
+		}
+		case 3:{
+			char search[60];
+			char* total;
+			
+			printf("Masukkan nama: ");
+			getchar();
+			gets(nama);
+			printf("--------------------------------------------------\n");
+			
+			printf("Nama yang anda masukkan: %s\n", nama);
+			printf("--------------------------------------------------\n");
+			
+			printf("Kata/teks apa yang ingin anda cari? ");
+			gets(search);
+			printf("--------------------------------------------------\n");
+			
+			total = strstr(nama, search);
+			
+			printf("Kata/teks yang anda cari yaitu %s di %s adalah: ", search, nama);
+			if(total == NULL){
+				printf("Tidak ditemukan");
+			}else{
+				printf("%s", total);
+			}
+			
+			break;
+		}
+	}
+	
+//	printf("Nama yang anda masukkan adalah %s\n", nama);
+//	
+//	printf("Masukkan indeks: ");
+//	scanf("%i", &indeks);
+//	
+//	printf("Masukkan karakter: ");
+//	insert = getche();
+//	
+//	nama[indeks] = insert;
+//	
+//	printf("\nNama yang anda masukkan adalah %s\n", nama);
+	
+	return 0;
+}
