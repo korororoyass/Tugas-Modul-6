@@ -1,0 +1,24 @@
+//Header
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	//Deklarasi string
+	char str[] = "Turbo_C";
+	
+	//Deklarasi tipe data
+	int i, j, len;
+	len = strlen(str);
+	
+	//Linecode program 
+	for (i = 7; i >= 0; i--)
+    {
+        for (j = 0; j < i; j++)
+        printf("%c",str[j]);
+        printf("\n");
+	}
+
+return 0;
+}
+
