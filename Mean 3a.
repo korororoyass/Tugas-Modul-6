@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main() 
+{
+    //Deklarasi tipe data
+    int n, a;
+    
+    //input jumlah data
+    printf("Masukkan jumlah data: ");
+	  scanf("%d",&n);
+    
+    //input data
+    int data[n];
+    float mean, sum;
+   
+    for(a=0; a<n; a++)
+    {
+      printf("Masukkan data ke-%d: ", a+1);
+			scanf("%d", &data[a]);
+      sum = sum + data[a];
+    }
+                    
+    printf("\n\n");
+	
+	//rata-rata
+    mean = sum/n;
+    printf("Rata-rata adalah: %.2f\n", mean);
+    
+    return 0;
+}
