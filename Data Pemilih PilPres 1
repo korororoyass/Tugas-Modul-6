@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char nama[50];
+	char kandidat[2][20]= {"1) Kanan", "2) Kiri"};//namanya ganti ndiri yagesya males mikir
+	int x, id;
+	
+	//input data
+	printf("Nama Lengkap: ");
+	scanf("%s", &nama);
+	printf("No.KTP Anda: ");
+	scanf("%d", &id);
+	printf("Masukkan Nomor Calon Pilihan Anda: ");
+	scanf("%d", &x);
+	printf("\n");
+	printf("=======================================\n\n");
+	printf("\tDATA PEMILIHAN UMUM PRESIDEN");
+	
+	switch (x)
+	{
+		case 1: printf("Nama Lengkap: %s", nama);
+				printf("\nNo.KTP: %d", id);
+				printf("\nMemilih Kandidat %s", kandidat[0]);
+		break;
+	
+		case 2: printf("Nama Lengkap: %s", nama);
+				printf("\nNo.KTP: %d", id);
+				printf("\nMemilih Kandidat %s", kandidat[1]);
+		break;
+		default: printf("Harap memilih nomor 1 atau 2.");
+		break;
+	}
+	return 0;
+}
